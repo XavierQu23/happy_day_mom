@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Día de la Madre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .card {
+      background-color: #ffffffcc;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      padding: 30px 20px;
+      max-width: 600px;
+      margin: 40px auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #e91e63;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .photo {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff69b4;
+      transform: rotate(45deg);
+      top: 100%;
+      animation: floatUp 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .button-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .music-button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 20px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 0 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .music-button:hover {
+      background-color: #c2185b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botones para controlar la música -->
+  <div class="button-container">
+    <button class="music-button" onclick="document.getElementById('musica').play()">▶️ Reproducir Música</button>
+    <button class="music-button" onclick="document.getElementById('musica').pause()">🔇 Detener Música</button>
+  </div>
+
+  <!-- Audio de fondo -->
+  <audio id="musica" loop>
+    <source src="Ricardo Arjona - Mi Novia Se Me Está Poniendo Vieja.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <!-- Tarjeta de mensaje -->
+  <div class="card">
+    <h1>🌷 Feliz Día de la Madre 🌷</h1>
+    
+    <img src="IMG_20241229_152055_686.jpg" alt="Foto con Mamá" class="photo">
+
+    <p>
+      Gracias por ser mi fuerza en los momentos débiles,<br>
+      mi alegría en los días grises y mi ejemplo cada día.<br><br>
+      Eres mi primera amiga, mi consejera y mi hogar.<br><br>
+      Te amo con todo mi corazón 💖<br><br>
+      ¡Feliz día hoy y siempre!
+    </p>
+  </div>
+
+  <!-- Corazones flotantes -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
